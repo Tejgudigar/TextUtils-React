@@ -6,11 +6,11 @@ import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
 import React, { useState } from 'react'
 // import React from "react";
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
 
 
 function App() {
@@ -51,30 +51,30 @@ function App() {
       setMode('dark')
       document.body.style.backgroundColor = 'black';
       showAlert("Dark mode has been enabled","success")
-      document.title = 'TextUtils - Dark Mode'
+      // document.title = 'TextUtils - Dark Mode'
     } else {
       setMode('light')
       document.body.style.backgroundColor = 'white'
       showAlert("Light mode has been enabled","success")
-      document.title = 'TextUtils - Light Mode'
+      // document.title = 'TextUtils - Light Mode'
     }
   }
 
     return (
     <>
-    {/* <Router> */}
+    <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} color={color} changeColor={changeColor} />
       <Alert alert={alert}></Alert>
       <div className="container  my-3">
-        <TextForm showAlert={showAlert} heading='Enter the text below' mode={mode} color={color} changeColor={changeColor} />
-         {/* <Routes> */}
-          {/* <Route exact path="/about" element={<About />} /> */}
-          {/* <Route exact path="/" element={<TextForm showAlert={showAlert} heading='Enter the text below' mode={mode} color={color} changeColor={changeColor} />} /> */}
-        {/* </Routes> */}
+        {/* <TextForm showAlert={showAlert} heading='Enter the text below' mode={mode} color={color} changeColor={changeColor} /> */}
+         <Routes>
+          <Route path="/about" element={<About mode={mode}  color={color} changeColor={changeColor} />} />
+          <Route exact path="/" element={<TextForm showAlert={showAlert} heading='Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces' mode={mode} color={color} changeColor={changeColor} />} />
+        </Routes>
       </div>
       
        {/* <Navbar/> */}
-    {/* </Router> */}
+    </Router>
     </>
   );
 }

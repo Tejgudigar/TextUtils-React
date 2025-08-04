@@ -89,11 +89,6 @@ TextUtils‑React/
 
 ---
 
-## 🎨 Screenshots
-
-*(Include screenshots of the UI in light and dark mode, showing text transformation features)*
-
----
 
 ## 👤 Author
 
